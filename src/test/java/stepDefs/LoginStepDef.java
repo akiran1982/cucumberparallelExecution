@@ -9,16 +9,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.Dashboard;
-import pages.LoginPage;
+
 
 import java.util.List;
 import java.util.Map;
 
 
 public class LoginStepDef {
-    private LoginPage loginPage;
-    private Dashboard dashboard;
+
     private WebDriver driver;
 
 
@@ -51,24 +49,7 @@ public class LoginStepDef {
     }
 
 
-    @Given("user has entered username {string} and password {string}")
-    public void enteredCredentials1(String userName, String password) {
-        loginPage = new LoginPage(driver);
-        loginPage.userName.sendKeys(userName);
-        loginPage.password.sendKeys(password);
-    }
 
-    @When("User click on Login")
-    public void clickOnLogin() {
-        loginPage.loginButton.click();
-    }
-
-    @Then("user verify {string} on Dashboard")
-    public void userVerifyDashboard(String text) {
-        dashboard = new Dashboard(driver);
-        //Assert.assertTrue(dashboard.productsLabel.isDisplayed());
-        System.out.println("resolved issues of user2");
-    }
 
     @And("user closes the browser")
     public void quitBrowser() {
