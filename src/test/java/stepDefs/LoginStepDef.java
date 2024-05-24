@@ -19,6 +19,7 @@ public class LoginStepDef {
 
     private WebDriver driver;
 
+    private String username;
 
     public LoginStepDef() {
         driver = CreateDriver.getInstance().getDriver();
